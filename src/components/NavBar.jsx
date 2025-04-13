@@ -11,7 +11,7 @@ const Navbar = () => {
     <header className="bg-blue-600 text-white shadow-md sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-8 m:px-4 lg:px-8 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold">
-          <NavLink to="/" onClick={() => setMenuOpen(false)}>MyStore</NavLink>
+          <NavLink to="/" onClick={() => setMenuOpen(false)}>Rwacoff</NavLink>
         </div>
 
         <div className="hidden md:flex space-x-4 text-white">
@@ -34,6 +34,16 @@ const Navbar = () => {
             }
           >
             Products
+          </NavLink>
+          <NavLink
+            to="/analytics"
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-2 border-white font-semibold pb-1"
+                : "hover:text-gray-100 transition"
+            }
+          >
+            Analytics
           </NavLink>
         </div>
 

@@ -64,9 +64,30 @@ export const reducer = (state, action) => {
                     imageUrl: "",
                 },
             };
+        case actions.SET_ANALYTICS_DATA:
+            return {
+                ...state,
+                analyticsData: action.payload,
+            };
+        case actions.SET_COMMODITY_TRENDS:
+            return {
+                ...state,
+                commodityTrendsData: Array.isArray(action.payload) ? action.payload : [],
+            };
 
-
+        case actions.SET_LOADING:
+            return {
+                ...state,
+                isLoading: action.payload,
+            };
+        case actions.SET_ERROR:
+            return {
+                ...state,
+                isError: true,
+                error: action.payload.error,
+            };
         default:
             return state;
+
     }
 };
