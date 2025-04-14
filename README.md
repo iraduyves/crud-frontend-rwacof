@@ -1,6 +1,50 @@
-# Getting Started with Create React App
+# CRUD Frontend - Rwacoff
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a frontend application for managing products and analytics, built using modern web technologies. It provides features such as product creation, editing, deletion, and analytics visualization.
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **React Router**: For client-side routing and navigation.
+- **React Query**: For server state management and data fetching.
+- **Axios**: For making HTTP requests to the backend API.
+- **Tailwind CSS**: For styling the application with utility-first CSS.
+- **Chart.js**: For creating interactive charts and visualizations.
+- **React Icons**: For including scalable vector icons.
+- **Notiflix**: For user-friendly notifications and confirmations.
+- **Docker**: For containerizing the application.
+- **Nginx**: For serving the production build.
+
+## State Management
+
+The application uses a combination of **React Context API** and **useReducer** for managing local state. The following contexts are implemented:
+
+- **ProductContext**: Manages the state for product-related operations such as fetching, creating, updating, and deleting products.
+- **AnalyticsContext**: Manages the state for analytics data, including fetching and displaying trends and summaries.
+
+## Error Handling
+
+Error handling is implemented using **Notiflix** for displaying user-friendly error messages. Additionally:
+
+- **React Query**: Provides built-in error handling for API requests.
+- **Custom Reducers**: Handle error states and update the UI accordingly.
+
+## Features
+
+- **Product Management**:
+  - View all products in a table format.
+  - Create new products with image uploads.
+  - Edit existing products.
+  - Delete products with confirmation dialogs.
+
+- **Analytics Dashboard**:
+  - Visualize top gainers and losers using bar charts.
+  - Display year-to-date (YTD) summaries using pie charts.
+  - Show year-over-year (YoY) performance using bar charts.
+
+- **Responsive Design**:
+  - Fully responsive layout using Tailwind CSS.
+  - Mobile-friendly navigation with a collapsible menu.
 
 ## Available Scripts
 
@@ -27,44 +71,18 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application is containerized using **Docker**. The `Dockerfile` and `docker-compose.yml` are included for building and running the application in a containerized environment.
 
-## Learn More
+### Docker Commands
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Build the Docker image:
+  ```sh
+  docker-compose build
