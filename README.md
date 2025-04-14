@@ -86,3 +86,4 @@ The application is containerized using **Docker**. The `Dockerfile` and `docker-
 - Build the Docker image:
   ```sh
   docker-compose build
+  
